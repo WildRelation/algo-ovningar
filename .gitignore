@@ -1,0 +1,17 @@
+# IntelliJ IDEA
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries
+.idea/shelf
+.idea/material_theme_project_new.xml
+**/.idea/workspace.xml
+**/.idea/material_theme_project_new.xml
+
+# Compiled output
+out/
+**/out/
+
+# OS
+.DS_Store
+Thumbs.db
