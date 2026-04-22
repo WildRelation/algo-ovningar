@@ -1,11 +1,15 @@
-# IntelliJ IDEA
-.idea/
-**/.idea/
-*.iml
+# IntelliJ IDEA - user-specific files only
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
+.idea/dictionaries/
+**/.idea/workspace.xml
+**/.idea/shelf/
 
 # Compiled output
 out/
 **/out/
+*.class
 
 # OS
 .DS_Store
