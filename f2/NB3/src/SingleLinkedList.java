@@ -1,40 +1,48 @@
-public class SingleLinkedList {
-    private static class Node{
-        int value;
-        Node next;
-        Node(int value){
-            this.value = value;
-        }
-        void test(){
-            System.out.println(size);
+public class SingleLinkedList<E>{
+
+    private static class Node<E>{
+        private E data;
+        private Node<E> next;
+        public Node(E data, Node<E> next){
+            this.data = data;
+            this.next = next;
         }
     }
 
-    private Node head;
-    public int size = 10;
+    private Node<E> head;
+    private int size;
 
-    public void add(int value){
-        Node newNode = new Node(value);
-        if(head == null){
-            head = newNode;
+    public SingleLinkedList(){
+        head = null;
+        size = 0;
+    }
+
+
+    public void add(int index, E element){
+        if(index<0 || index>size) throw new IndexOutOfBoundsException();
+        if(index == 0){
+            addFirst(element);
         }
         else {
-            Node current = head;
-            while(current.next != null){
-                current = current.next;
-            }
-            current.next = newNode;
+            Node<E> node = getNode(index-1);
 
         }
+        Node<E> current = head;
     }
 
-    public void print(){
-        Node current = head;
-        while(current.next != null){
-            System.out.println(current.value + ", ");
-            current = current.next;
+    private Node<E> getNode(int index){
+        Node<E> node = head;
+        while(node.next!=null){
+            node = node.next;
         }
+        return node;
+
     }
+    public void addFirst(E element){
+        head = new Node<>(element, head);
+        size++;
+    }
+
+
 
 }
-
